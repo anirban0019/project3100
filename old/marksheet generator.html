@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> This is a Marksheet generator</title>
+	<style>
+		#container{
+		width:980px;
+		background-color:lightblue;
+		height: 400px;
+		margin:auto; }
+		.heading{
+		text-align:center;
+		text-decoration:underline;
+		padding-top:25px;
+		}
+		#info{
+		width:600px;
+		margin:auto;
+		}
+		#marks{
+		width:600px;
+		text-align:center;
+		margin:auto;
+		border: 1px solid black;
+		}
+	</style>
+	<script>
+		function main(){
+		var nm= document.getElementById("name").value;
+		var rl= document.getElementById("roll").value;
+		var vsn1=document.getElementById("sn1").value;
+		var vsm1=document.getElementById("sm1").value;
+		var vsn2=document.getElementById("sn2").value;
+		var vsm2=document.getElementById("sm2").value;
+		var vsn3=document.getElementById("sn3").value;
+		var vsm3=document.getElementById("sm3").value;
+		var vsn4=document.getElementById("sn4").value;
+		var vsm4=document.getElementById("sm4").value;
+		var vsn5=document.getElementById("sn5").value;
+		var vsm5=document.getElementById("sm5").value;
+		var vsn6=document.getElementById("sn6").value;
+		var vsm6=document.getElementById("sm6").value;
+		
+		var total = (vsm1*1)+(vsm2*1)+(vsm3*1)+(vsm4*1)+(vsm5*1)+(vsm6*1);
+		var percent= (total/600)*100;
+		percent=percent.toFixed(2);
+		var percentage= percent+"%";
+		
+		document.getElementById("tname").innerHTML=nm;
+		document.getElementById("troll").innerHTML=rl;
+		document.getElementById("tsn1").innerHTML=vsn1;
+		document.getElementById("tsm1").innerHTML=vsm1;
+		document.getElementById("tsn2").innerHTML=vsn2;
+		document.getElementById("tsm2").innerHTML=vsm2;
+		document.getElementById("tsn3").innerHTML=vsn3;
+		document.getElementById("tsm3").innerHTML=vsm3;
+		document.getElementById("tsn4").innerHTML=vsn4;
+		document.getElementById("tsm4").innerHTML=vsm4;
+		document.getElementById("tsn5").innerHTML=vsn5;
+		document.getElementById("tsm5").innerHTML=vsm5;
+		document.getElementById("tsn6").innerHTML=vsn6;
+		document.getElementById("tsm6").innerHTML=vsm6;
+		document.getElementById("tmarks").innerHTML=total;
+		document.getElementById("tprcnt").innerHTML=percentage;
+		
+		}
+	</script>
+</head>
+<body>
+ Fullname <input type="text" id="name" value=""> <br>
+ Roll <input type="text" id="roll" value=""> <br><br>
+ Subject 1 name <input type="text" id="sn1" value=""></input> &nbsp;&nbsp;
+ Subject 1 marks <input type="text" id="sm1" value=""></input> <br>
+ Subject 2 name <input type="text" id="sn2" value=""></input> &nbsp;&nbsp;
+ Subject 2 marks <input type="text" id="sm2" value=""></input> <br>
+Subject 3 name <input type="text" id="sn3" value=""></input> &nbsp;&nbsp;
+ Subject 3 marks <input type="text" id="sm3" value=""></input> <br>
+ Subject 4 name <input type="text" id="sn4" value=""></input> &nbsp;&nbsp;
+ Subject 4 marks <input type="text" id="sm4" value=""></input> <br>
+Subject 5 name <input type="text" id="sn5" value=""></input> &nbsp;&nbsp;
+ Subject 5 marks <input type="text" id="sm5" value=""></input> <br>
+ Subject 6 name <input type="text" id="sn6" value=""></input> &nbsp;&nbsp;
+ Subject 6 marks <input type="text" id="sm6" value=""></input> <br>
+ 
+ <input type="submit" value="Generate Marksheet" onclick="main()">
+ 
+ <div id="container">
+	<div class="heading"><h1>Marksheet</h1></div>
+	
+	<table id="info">
+		<tr>
+		<th>Name</th>	<td id="tname"></td>
+		<th> Roll</th> <td id="troll"></td>
+		</tr>
+	</table>
+	<br><br><br<br>
+	
+	<table id="marks">
+	<tr>
+		<th>Subject name</th>
+		<th> Obtained marks</th>
+		<th> Out of </th>
+	</tr>
+	<tr>
+		<td id="tsn1"></td>
+		<td id="tsm1"></td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td id="tsn2"></td>
+		<td id="tsm2"></td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td id="tsn3"></td>
+		<td id="tsm3"></td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td id="tsn4"></td>
+		<td id="tsm4"></td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td id="tsn5"></td>
+		<td id="tsm5"></td>
+		<td>100</td>
+	</tr>
+	<tr>
+		<td id="tsn6"></td>
+		<td id="tsm6"></td>
+		<td>100</td>
+	</tr>
+	</table>
+	<table id="info">
+	<tr>
+		<th>Total obtained marks: </th>
+		<td id="tmarks"></td>
+		<th> Percentage :<th>
+		<td id="tprcnt"><td>
+	</tr>
+	</table>
+ </div>
+</body>
+</html>
